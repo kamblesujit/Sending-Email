@@ -1,0 +1,37 @@
+﻿@model Email
+@{
+    Layout = "_Layout";
+}
+
+<div class="col-6">
+    <form action="Index" method="post">
+        <div class="form-group">
+            <label asp-for="To" class="label-control">To:</label>
+            <input asp-for="To" class="form-control" />
+            <span asp-validation-for="To" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Subject" class="label-control">Subject:</label>
+            <input asp-for="Subject" class="form-control" />
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Body" class="label-control">Body:</label>
+            <textarea asp-for="Body" class="form-control" rows="4"></textarea>
+            <span asp-validation-for="Body" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Gmail" class="label-control">Gmail:</label>
+            <input asp-for="Gmail" class="form-control" />
+            <span asp-validation-for="Gmail" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Password" class="label-control">Password:</label>
+            <input asp-for="Password" class="form-control" type="password" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <button class="btn btn-primary" type="submit" asp-action="Index">Send Mail</button>
+        <span style="color:blue;font-size:large">@ViewBag.Message</span>
+    </form>
+</div>
